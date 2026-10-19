@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b32">
+  <meta name="description" content="基于20个标准俯卧撑基础的30天俄挺训练手册。动作图解、每组训练量、计时、记录和阶段切换。">
+  <title>悬空之前 · 30天俄挺训练手册</title>
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="#today" class="brand" aria-label="悬空之前 首页"><span class="brand-mark">↗</span><span>悬空之前<small>THE PLANCHE PRACTICE</small></span></a>
+    <div class="sidebar-caption">你的训练空间</div>
+    <nav aria-label="主要导航">
+      <a href="#today" class="nav-link active" data-view="today"><span>◉</span> 今日训练 <i>01</i></a>
+      <a href="#calendar" class="nav-link" data-view="calendar"><span>▦</span> 30天日历 <i>02</i></a>
+      <a href="#library" class="nav-link" data-view="library"><span>⊞</span> 动作图鉴 <i>03</i></a>
+      <a href="#progression" class="nav-link" data-view="progression"><span>↗</span> 进阶路线 <i>04</i></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-progress"><span>本周期进度</span><strong id="sidebar-count">0 / 30</strong></div>
+      <div class="progress-track"><div id="sidebar-progress"></div></div>
+      <p>把每一次稳稳撑住，<br>变成下一次离地的底气。</p>
+      <button class="text-button" id="export-btn">↓ 导出训练记录</button>
+      <div class="local-note"><span class="status-dot"></span> 记录保存在当前浏览器</div>
+    </div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div class="breadcrumb">个人训练手册 <span>/</span> 30 DAY PRACTICE</div><button class="profile-chip" id="profile-btn"><span class="avatar">20</span><span>当前基础 <b>20次 × 至少2组</b></span><span>⌄</span></button></header>
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span></span> 30天 · 俄挺进阶计划</div><h1>让身体，<br>逐步<span>悬空。</span></h1><p>从扎实的直臂支撑开始。<br>每一次练习，都有清楚的目标。</p><div class="hero-actions"><button id="hero-start" class="button primary">开始今天的训练 <span>↗</span></button><a href="#progression" class="hero-secondary">了解进阶条件 →</a></div></div>
+        <div class="hero-art"><img src="assets/hero.svg" alt="完整俄挺姿势示意，手臂伸直、身体水平悬空。完整俄挺是长期目标。"><div class="art-label"><span class="status-dot"></span> 先撑稳，再离地。</div></div>
+      </section>
+      <section class="stat-strip" aria-label="计划概览"><div><strong>30<small>天</small></strong><span>一个完整训练周期</span></div><div><strong>5<small>练 / 周</small></strong><span>3天专项推力 · 2天轻辅助</span></div><div><strong>3<small>个阶段</small></strong><span>达标后手动进阶</span></div><div><strong id="completed-stat">00<small>/ 30</small></strong><span>已完成的计划日</span></div></section>
+      <section id="today-view" class="view active" aria-labelledby="session-heading">
+        <div class="section-top"><div><div class="eyebrow muted">YOUR DAILY PRACTICE</div><h2 id="session-heading">今天，练好这一组。</h2></div><button class="button outline small" id="settings-btn">调整阶段与训练量 <span>↗</span></button></div>
+        <div class="day-strip" id="day-strip" aria-label="选择训练日"></div>
+        <div class="session-banner" id="session-banner"></div>
+        <div id="first-day-note" class="note-box"><span>↗</span><p><b>第1天先确定起点</b>　热身后依次试冲肩8秒、辅助团身5秒。只有脚尖已能卸力时才试离地1–3秒。最多试3组，计入当天专项4组总量；组间休息2–3分钟。</p></div>
+        <details id="warmup" class="warmup"><summary><span><span class="warmup-icon">↻</span> 先热身，再开始 <small>每个训练日 · 按当日动作完成</small></span><span class="chevron">⌄</span></summary><div id="warmup-grid" class="warmup-grid"></div></details>
+        <div id="exercise-grid" class="exercise-grid"></div>
+        <div id="day-footer" class="day-footer"></div>
+        <div class="notes-panel"><label for="daily-note">今天的身体反馈 <span>记录前倾距离、余力或不适，留给下一次参考。</span></label><textarea id="daily-note" rows="2" placeholder="例如：冲肩前倾约3cm，最后一组还可稳定多撑2秒；次日再记录恢复情况。"></textarea><div class="notes-bottom"><small id="save-hint">本机自动保存</small><button class="button primary small" id="finish-day">完成今天的计划 <span>✓</span></button></div></div>
+        <div class="safety-line"><span>ⓘ</span> 只记录合格动作。每组俯卧撑留约2次余力；变形就结束。关节疼痛时停止对应动作，持续或反复疼痛需专业评估。</div>
+      </section>
+      <section id="calendar-view" class="view" aria-labelledby="calendar-heading"><div class="section-top"><div><div class="eyebrow muted">THE NEXT 30 DAYS</div><h2 id="calendar-heading">有训练，也有留白。</h2></div><span class="subtle">点击任意一天，查看动作与训练量</span></div><div class="legend"><span><i class="legend-a"></i>A 专项训练</span><span><i class="legend-b"></i>B 基础力量</span><span><i class="legend-c"></i>C / D 辅助训练</span><span><i class="legend-r"></i>每周2天恢复</span><span><i class="legend-d"></i>减量 / 复测</span></div><div id="calendar-grid" class="calendar-grid"></div><div class="note-box"><span>↗</span><p>每周5练2休：专项 → 下肢核心 → 推力 → 恢复 → 专项 → 轻辅助 → 恢复。第22天主动减量，第29天轻练，第30天复测。<b>日历不会自动替你升级动作。</b></p></div></section>
+      <section id="library-view" class="view" aria-labelledby="library-heading"><div class="section-top"><div><div class="eyebrow muted">THE MOVEMENT LIBRARY</div><h2 id="library-heading">每个动作，看得明白。</h2></div><span class="subtle">图解是姿势提示，点击查看要点与降阶方式</span></div><div class="filter-row" id="library-filters"><button class="filter active" data-filter="all">全部动作</button><button class="filter" data-filter="专项">俄挺专项</button><button class="filter" data-filter="力量">推力训练</button><button class="filter" data-filter="辅助">核心与背部</button><button class="filter" data-filter="下肢">下肢臀腿</button><button class="filter" data-filter="活动">热身与恢复</button></div><div class="library-grid" id="library-grid"></div></section>
+      <section id="progression-view" class="view" aria-labelledby="progression-heading"><div class="section-top"><div><div class="eyebrow muted">EARN YOUR NEXT LEVEL</div><h2 id="progression-heading">撑稳这一关，再向前。</h2></div></div><p class="section-intro">不用等到固定日期。根据动作质量、完成量和次日恢复，手动选择当前阶段。以下门槛是本计划的执行规则。</p><div id="stage-route" class="stage-route"></div><div class="progress-rules"><div><span>01</span><h3>一次只加一个变量</h3><p>时间、次数、前倾幅度，选一项增加。专项全组完成且仍有约2秒余力，下次每组加1秒。</p></div><div><span>02</span><h3>下一关先少量试做</h3><p>尝试计入当天4组专项总量。新动作控制不住，就用原级别完成剩余组数。</p></div><div><span>03</span><h3>升级由你确认</h3><p>计时结束或勾选完成，都不等于动作达标。结合录像、余力和次日关节状态再决定。</p></div></div><div class="note-box"><span>ⓘ</span><p>30天用于建立和检验专项能力，完整并腿俄挺是后续长期目标。图鉴里的进阶团身仅供了解，默认不加入本周期处方。</p></div></section>
+      <footer class="site-footer"><div class="footer-brand">悬空之前 <span>一步一步，把自己撑起来。</span></div><div>动作参考：<a href="https://gmb.io/planche/" target="_blank" rel="noreferrer">GMB 俄挺进阶</a><span>·</span><a href="https://www.acefitness.org/resources/everyone/exercise-library/49/glute-bridge/" target="_blank" rel="noreferrer">ACE 臀桥</a><span>·</span><a href="https://www.bilibili.com/video/BV1Y1Je6uE9i" target="_blank" rel="noreferrer">原视频 · 努力的小易_</a></div><small>图解为自制姿势示意；标注“原视频参考”的照片来自用户提供的视频。具体训练量依据本次对话编排。记录仅保存在此浏览器，不跨设备同步。</small></footer>
+    </main>
+  </div>
+  <div class="timer-dock" id="timer-dock"><button class="timer-compact" id="timer-toggle" aria-label="展开计时器">◷</button><div class="timer-expanded"><span id="timer-label">组间休息</span><strong id="timer-display" aria-live="off">02:30</strong><button id="timer-play" aria-label="开始计时">▶</button><button id="timer-reset" aria-label="重置计时">↺</button><select id="rest-duration" aria-label="组间休息时长"><option value="60">60秒休息</option><option value="120">120秒休息</option><option value="150" selected>150秒休息</option><option value="180">180秒休息</option></select></div></div>
+  <dialog id="exercise-dialog"><button class="dialog-close" data-close aria-label="关闭动作详情">×</button><div id="exercise-detail"></div></dialog>
+  <dialog id="settings-dialog"><button class="dialog-close" data-close aria-label="关闭训练设置">×</button><div class="eyebrow muted">MAKE IT YOUR PRACTICE</div><h2>调整你的训练</h2><p class="dialog-intro">当前基础：标准俯卧撑20次，至少能做2组。尚未确认专项水平，从第1天测试选择起点。</p><form id="settings-form"><label>当前阶段<select name="stage" id="stage-select"><option value="1">Ⅰ · 直臂冲肩</option><option value="2">Ⅱ · 脚尖辅助团身</option><option value="3">Ⅲ · 团身俄挺</option></select></label><label>每组专项保持时间 <span id="hold-range"></span><div class="input-unit"><input name="hold" id="hold-input" type="number" min="8" max="12" value="8" required><span>秒 × 4组</span></div></label><label>冲肩俯卧撑<div class="input-unit"><input name="ppp" type="number" min="5" max="8" value="5" required><span>次 × 3组</span></div></label><label>B日标准俯卧撑<div class="input-unit"><select name="push"><option value="10">10</option><option value="12">12</option><option value="14">14</option></select><span>次 × 3组</span></div></label><div id="settings-gate" class="setting-gate"></div><p class="form-note">调整只影响尚未开始记录的训练日。已记录的日期保留当时训练量。仅在无关节疼痛、恢复良好且满足条件时进阶。</p><button class="button primary" type="submit">保存训练设置 <span>✓</span></button></form><button class="text-button settings-export" id="settings-export">↓ 导出训练记录（JSON）</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
