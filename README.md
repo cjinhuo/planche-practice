@@ -1,5 +1,7 @@
 # 悬空之前 · 30天俄挺训练手册
 
+[打开训练记录工具](https://cjinhuo.github.io/planche-practice/) · [阅读不依赖 JavaScript 的训练指南](https://cjinhuo.github.io/planche-practice/guide/)
+
 每周5练2休的俄挺入门训练网页，含动作图解、逐组记录、计时与手动阶段切换。
 
 无需登录。训练记录保存在访问者当前浏览器的localStorage中，不会上传服务器，也不跨设备同步。
@@ -14,3 +16,5 @@
 - 臀桥动作参考：[ACE](https://www.acefitness.org/resources/everyone/exercise-library/49/glute-bridge/)。
 
 网页使用原生HTML/CSS/JavaScript，静态部署无需构建。
+
+用 `node --test` 校验静态页面、站点地图以及指南与第 1 天训练数据的一致性。
